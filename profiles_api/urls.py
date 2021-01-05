@@ -6,6 +6,7 @@ from profiles_api import views
 
 router = DefaultRouter()
 router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset')
+router.register('profile', views.UserProfileViewSet)
 # because the router will create all of the four URLs for us, we don't ned to specify a forward slash
 #base_name='hello-viewset' is used for retrieving the URLs in our router. If we ever need to do that using the URL retrieving function provided by Django
 

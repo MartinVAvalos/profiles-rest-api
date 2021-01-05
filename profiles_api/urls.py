@@ -12,6 +12,7 @@ router.register('profile', views.UserProfileViewSet)
 
 urlpatterns = [
     path('hello-view/', views.HelloAPIView.as_view()),
+    path('login/', views.UserLoginApiView.as_view()),
     path('', include(router.urls))
 ]
 #as you register new routes with the router, it generates a list of URLs that are associated for our ViewSet. It figures out the URLs that are required for all of the functions that we add to our ViewSet, and then it generates the 'urls' list available at router.urls.

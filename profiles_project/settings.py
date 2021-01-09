@@ -26,7 +26,10 @@ SECRET_KEY = '08u58)i3vov^&kb$k&butqaxvzbwj5(5$dy-^ngkxj(t80hm9+'
 DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 # Line 26 pulls in the value of the environment variable called debug. The value of the variable is set in the deploy directory in file 'supervisor_profiles_api.conf'. In the supervisor file we set DEBUG=0. 1 is the default value, and the file if present will override it to 0.
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ec2-18-218-81-225.us-east-2.compute.amazonaws.com',
+    '127.0.0.1'
+]
 
 
 # Application definition

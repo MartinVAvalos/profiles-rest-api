@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '08u58)i3vov^&kb$k&butqaxvzbwj5(5$dy-^ngkxj(t80hm9+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG', 1)))
+# Line 26 pulls in the value of the environment variable called debug. The value of the variable is set in the deploy directory in file 'supervisor_profiles_api.conf'. In the supervisor file we set DEBUG=0. 1 is the default value, and the file if present will override it to 0.
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+STATIC_ROOT = 'static/'
+# Line 128: The STATIC_ROOT is the location where Django will store all of the static files when we run our collectstatic command.
